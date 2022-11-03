@@ -4,6 +4,7 @@ import { ProductListComponent } from './components/product-list/product-list.com
 import { CategoriesListComponent } from './components/categories-list/categories-list.component';
 import { CryptoListComponent } from './components/crypto-list/crypto-list.component';
 import { PublicHolidayListComponent } from './components/public-holiday-list/public-holiday-list.component';
+import { CategoriesCheckboxListComponent } from './components/categories-checkbox-list/categories-checkbox-list.component';
 import { ProductListComponentModule } from './components/product-list/product-list.component-module';
 import { ProductsServiceModule } from './services/products.service-module';
 import { CategoriesListComponentModule } from './components/categories-list/categories-list.component-module';
@@ -12,6 +13,7 @@ import { CryptoListComponentModule } from './components/crypto-list/crypto-list.
 import { CryptosServiceModule } from './services/cryptos.service-module';
 import { PublicHolidayListComponentModule } from './components/public-holiday-list/public-holiday-list.component-module';
 import { PublicHolidaysServiceModule } from './services/public-holidays.service-module';
+import { CategoriesCheckboxListComponentModule } from './components/categories-checkbox-list/categories-checkbox-list.component-module';
 
 @NgModule({
   imports: [
@@ -19,7 +21,8 @@ import { PublicHolidaysServiceModule } from './services/public-holidays.service-
       { path: 'products', component: ProductListComponent },
       { path: 'categories', component: CategoriesListComponent },
       { path: 'crypto', component: CryptoListComponent },
-      { path: 'public-holidays', component: PublicHolidayListComponent }
+      { path: 'public-holidays', component: PublicHolidayListComponent },
+      { path: 'checkbox-categories', component: CategoriesCheckboxListComponent }
     ]),
     ProductListComponentModule,
     ProductsServiceModule,
@@ -28,7 +31,8 @@ import { PublicHolidaysServiceModule } from './services/public-holidays.service-
     CryptoListComponentModule,
     CryptosServiceModule,
     PublicHolidayListComponentModule,
-    PublicHolidaysServiceModule
+    PublicHolidaysServiceModule,
+    CategoriesCheckboxListComponentModule
   ],
   exports: [RouterModule],
 })
