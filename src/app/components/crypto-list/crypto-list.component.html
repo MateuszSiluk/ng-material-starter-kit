@@ -1,0 +1,12 @@
+<mat-card
+  ><mat-card-title>Crypto chips</mat-card-title
+  ><mat-chip-list
+    aria-label="Fish selection"
+    *ngIf="cryptoList$ | async as cryptoList; else loading"
+  >
+    <mat-chip *ngFor="let crypto of cryptoList">
+      {{ crypto.symbol }}
+    </mat-chip> </mat-chip-list
+  ><mat-card-content></mat-card-content
+></mat-card>
+<ng-template #loading>Please Wait Loading... </ng-template>
