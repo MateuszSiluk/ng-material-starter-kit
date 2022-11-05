@@ -4,7 +4,9 @@ import {
   ViewEncapsulation,
 } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Observable } from 'rxjs';
 import { ProductsService } from '../../services/products.service';
+import { CategoriesService } from '../../services/categories.service';
 
 @Component({
   selector: 'app-product-form',
@@ -22,7 +24,13 @@ export class ProductFormComponent {
     image: new FormControl('', [Validators.required]),
   });
 
-  constructor(private _productsService: ProductsService) {}
+  readonly categoriesList$: Observable<string[]> =
+    this._categoriesService.getAll();
+
+  constructor(
+    private _productsService: ProductsService,
+    private _categoriesService: CategoriesService
+  ) {}
 
   onProductFormSubmitted(productForm: FormGroup): void {
     if (productForm.invalid) {
@@ -36,8 +44,6 @@ export class ProductFormComponent {
         description: productForm.get('description')?.value,
         image: productForm.get('image')?.value,
       })
-      .subscribe(() => {
-        productForm.reset();
-      });
+      .subscribe();
   }
 }

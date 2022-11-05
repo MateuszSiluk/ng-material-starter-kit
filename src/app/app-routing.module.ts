@@ -9,21 +9,23 @@ import { EmployeeFormComponentModule } from './components/employee-form/employee
 import { EmployeesServiceModule } from './services/employees.service-module';
 import { AuthenticationFormComponentModule } from './components/authentication-form/authentication-form.component-module';
 import { AuthenticationServiceModule } from './services/authentication.service-module';
+import { CategoriesServiceModule } from './services/categories.service-module';
 
 @NgModule({
   imports: [
     RouterModule.forRoot([
       { path: 'create-product', component: ProductFormComponent },
       { path: 'create-employee', component: EmployeeFormComponent },
-      { path: 'login', component: AuthenticationFormComponent }
+      { path: 'login', component: AuthenticationFormComponent },
     ]),
     ProductFormComponentModule,
     ProductsServiceModule,
     EmployeeFormComponentModule,
     EmployeesServiceModule,
     AuthenticationFormComponentModule,
-    AuthenticationServiceModule
+    AuthenticationServiceModule,
+    CategoriesServiceModule,
   ],
   exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
