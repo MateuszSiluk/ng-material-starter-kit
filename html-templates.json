@@ -84,6 +84,10 @@
     "cart-template": {
       "container": "<ng-container *ngIf=\"$detailVariable$ | async as $itemVariable$\">$content$</ng-container>",
       "content": "<p>You have $productNumber$ products in the cart</p>"
+    },
+    "user-template": {
+      "container": "<ng-container *ngIf=\"$detailVariable$ | async as $itemVariable$\">$content$</ng-container>",
+      "content": "<div><h1>$fullName$</h1></div>\n<div><p>$emailAddress$</p></div>"
     }
   }
 }

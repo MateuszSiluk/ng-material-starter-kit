@@ -4,6 +4,7 @@ import { CatFactDetailsComponent } from './components/cat-fact-details/cat-fact-
 import { AgePredictionDetailsComponent } from './components/age-prediction-details/age-prediction-details.component';
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
 import { CartDetailsComponent } from './components/cart-details/cart-details.component';
+import { UserDetailsComponent } from './components/user-details/user-details.component';
 import { CatFactDetailsComponentModule } from './components/cat-fact-details/cat-fact-details.component-module';
 import { CatFactServiceModule } from './services/cat-fact.service-module';
 import { AgePredictionDetailsComponentModule } from './components/age-prediction-details/age-prediction-details.component-module';
@@ -12,6 +13,8 @@ import { ProductDetailsComponentModule } from './components/product-details/prod
 import { ProductsServiceModule } from './services/products.service-module';
 import { CartDetailsComponentModule } from './components/cart-details/cart-details.component-module';
 import { CartsServiceModule } from './services/carts.service-module';
+import { UserDetailsComponentModule } from './components/user-details/user-details.component-module';
+import { UsersServiceModule } from './services/users.service-module';
 
 @NgModule({
   imports: [
@@ -19,7 +22,8 @@ import { CartsServiceModule } from './services/carts.service-module';
       { path: 'cat-fact', component: CatFactDetailsComponent },
       { path: 'age/:name', component: AgePredictionDetailsComponent },
       { path: 'product/:id', component: ProductDetailsComponent },
-      { path: 'cart/:id', component: CartDetailsComponent }
+      { path: 'cart/:id', component: CartDetailsComponent },
+      { path: 'user/:id', component: UserDetailsComponent }
     ]),
     CatFactDetailsComponentModule,
     CatFactServiceModule,
@@ -28,7 +32,9 @@ import { CartsServiceModule } from './services/carts.service-module';
     ProductDetailsComponentModule,
     ProductsServiceModule,
     CartDetailsComponentModule,
-    CartsServiceModule
+    CartsServiceModule,
+    UserDetailsComponentModule,
+    UsersServiceModule
   ],
   exports: [RouterModule],
 })
