@@ -88,6 +88,11 @@
     "user-template": {
       "container": "<ng-container *ngIf=\"$detailVariable$ | async as $itemVariable$\">$content$</ng-container>",
       "content": "<div><h1>$fullName$</h1></div>\n<div><p>$emailAddress$</p></div>"
+    },
+    "postCode-template": {
+      "container": "<ng-container *ngIf=\"$detailVariable$ | async as $itemVariable$\">$content$</ng-container><ng-template #noData>No data to load </ng-template>",
+      "content": "<div>\n    <h1>Post Code: $postCode$</h1>\n  </div>\n  <div>\n    <p>Country: $country$</p>\n  </div>\n  <div>\n    <p>Country abbreviation: $countryAbbreviation$</p>\n  </div>\n  <h2>Places</h2>\n  <div *ngFor=\"let place of $postCode.places$\">\n    <p>Place name: $placeName$</p>\n    <p>Place state: $placeState$</p>\n    <p>State Abbreviation: $stateAbbreviation$</p>\n  </div>"
+
     }
   }
 }

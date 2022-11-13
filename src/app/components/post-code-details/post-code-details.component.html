@@ -1,0 +1,17 @@
+<ng-container *ngIf="postCodeData$ | async as postCode"
+  ><div>
+    <h1>Post Code: {{ postCode["post code"] }}</h1>
+  </div>
+  <div>
+    <p>Country: {{ postCode["country"] }}</p>
+  </div>
+  <div>
+    <p>Country abbreviation: {{ postCode["country abbreviation"] }}</p>
+  </div>
+  <h2>Places</h2>
+  <div *ngFor="let place of postCode.places">
+    <p>Place name: {{ place["place name"] }}</p>
+    <p>Place state: {{ place["state"] }}</p>
+    <p>State Abbreviation: {{ place["state abbreviation"] }}</p>
+  </div></ng-container
+><ng-template #noData>No data to load </ng-template>
