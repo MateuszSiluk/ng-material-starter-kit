@@ -6,6 +6,7 @@ import { CryptoListComponent } from './components/crypto-list/crypto-list.compon
 import { PublicHolidayListComponent } from './components/public-holiday-list/public-holiday-list.component';
 import { CategoriesCheckboxListComponent } from './components/categories-checkbox-list/categories-checkbox-list.component';
 import { CategoriesMenuComponent } from './components/categories-menu/categories-menu.component';
+import { ProductListTableComponent } from './components/product-list-table/product-list-table.component';
 import { ProductListComponentModule } from './components/product-list/product-list.component-module';
 import { ProductsServiceModule } from './services/products.service-module';
 import { CategoriesListComponentModule } from './components/categories-list/categories-list.component-module';
@@ -16,6 +17,7 @@ import { PublicHolidayListComponentModule } from './components/public-holiday-li
 import { PublicHolidaysServiceModule } from './services/public-holidays.service-module';
 import { CategoriesCheckboxListComponentModule } from './components/categories-checkbox-list/categories-checkbox-list.component-module';
 import { CategoriesMenuComponentModule } from './components/categories-menu/categories-menu.component-module';
+import { ProductListTableComponentModule } from './components/product-list-table/product-list-table.component-module';
 
 @NgModule({
   imports: [
@@ -25,7 +27,8 @@ import { CategoriesMenuComponentModule } from './components/categories-menu/cate
       { path: 'crypto', component: CryptoListComponent },
       { path: 'public-holidays', component: PublicHolidayListComponent },
       { path: 'checkbox-categories', component: CategoriesCheckboxListComponent },
-      { path: 'categories-menu', component: CategoriesMenuComponent }
+      { path: 'categories-menu', component: CategoriesMenuComponent },
+      { path: 'product-search', component: ProductListTableComponent }
     ]),
     ProductListComponentModule,
     ProductsServiceModule,
@@ -36,7 +39,8 @@ import { CategoriesMenuComponentModule } from './components/categories-menu/cate
     PublicHolidayListComponentModule,
     PublicHolidaysServiceModule,
     CategoriesCheckboxListComponentModule,
-    CategoriesMenuComponentModule
+    CategoriesMenuComponentModule,
+    ProductListTableComponentModule
   ],
   exports: [RouterModule],
 })
