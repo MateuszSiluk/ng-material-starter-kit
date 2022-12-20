@@ -1,0 +1,29 @@
+<mat-card
+  ><mat-card-title></mat-card-title><mat-card-content></mat-card-content
+></mat-card>
+<mat-selection-list role="list" fxLayout="row" [multiple]="false"
+  ><mat-list-option
+    role="listitem"
+    *ngFor="let employee of employeeAscDesc$ | async"
+    (click)="sortSalary(employee)"
+    >{{ employee }}</mat-list-option
+  ></mat-selection-list
+>
+<mat-selection-list role="list" fxLayout="row" [multiple]="false"
+  ><mat-list-option
+    role="listitem"
+    *ngFor="let age of ageRange$ | async"
+    (click)="sortAge(age)"
+    >{{ age }}</mat-list-option
+  ></mat-selection-list
+>
+
+<mat-card
+  ><mat-card-title></mat-card-title><mat-card-content></mat-card-content
+></mat-card>
+<mat-list role="list"
+  ><mat-list-item role="listitem" *ngFor="let employee of employeeData$ | async"
+    >{{ employee.employee_name }} {{ employee.employee_salary | currency }}
+    {{ employee.employee_age }}</mat-list-item
+  ></mat-list
+>
