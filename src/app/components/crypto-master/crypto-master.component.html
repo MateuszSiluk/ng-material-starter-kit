@@ -1,0 +1,19 @@
+<mat-grid-list cols="2" rowHeight="1:2">
+  <mat-grid-tile
+    ><mat-list role="list"
+      ><mat-list-item
+        role="listitem"
+        *ngFor="let item of cryptoCurrencies$ | async"
+        >{{ item.symbol }}
+        <button mat-button color="primary" (click)="selectedCurrency(item)">
+          Show price change
+        </button>
+      </mat-list-item></mat-list
+    ></mat-grid-tile
+  >
+  <mat-grid-tile
+    ><ng-container *ngIf="cryptoDetails$ | async as item">{{
+      item.priceChange
+    }}</ng-container></mat-grid-tile
+  >
+</mat-grid-list>
