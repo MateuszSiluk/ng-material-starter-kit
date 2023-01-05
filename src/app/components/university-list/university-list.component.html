@@ -1,0 +1,36 @@
+<mat-card
+  ><mat-card-title></mat-card-title
+  ><mat-card-content
+    ><form>
+      <div>
+        <mat-form-field appearance="fill"
+          ><mat-label>Country</mat-label
+          ><input
+            matInput
+            type="text"
+            placeholder="Country"
+            [formControl]="uniForm"
+            required
+            #inputCountry
+          /><mat-error *ngIf="uniForm.value.invalid"
+            >country is invalid</mat-error
+          ></mat-form-field
+        >
+      </div>
+    </form></mat-card-content
+  ></mat-card
+>
+<div *ngIf="inputCountry.value.length > 0; else wrongState">
+  <mat-card *ngIf="universityLists$ | async as universityList">
+    <mat-card-content *ngIf="universityList.length > 0; else emptyState"
+      ><mat-list role="list"
+        ><mat-list-item role="listitem" *ngFor="let item of universityList">{{
+          item.name
+        }}</mat-list-item></mat-list
+      >
+    </mat-card-content>
+    <ng-template #emptyState><p>Did not find any universities</p></ng-template>
+  </mat-card>
+</div>
+
+<ng-template #wrongState><p>Type value</p></ng-template>
