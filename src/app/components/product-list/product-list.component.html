@@ -1,0 +1,39 @@
+<mat-card
+  ><mat-card-title>Limit</mat-card-title
+  ><mat-card-content
+    ><mat-button-toggle-group [formControl]="limit"
+      ><mat-button-toggle
+        *ngFor="let item of toggleButtons$ | async"
+        [value]="item"
+        >{{ item }}</mat-button-toggle
+      ></mat-button-toggle-group
+    ></mat-card-content
+  ></mat-card
+>
+<mat-card
+  ><mat-card-title></mat-card-title
+  ><mat-card-content
+    ><button mat-button [matMenuTriggerFor]="menu">:</button>
+    <mat-menu #menu="matMenu">
+      <button
+        mat-menu-item
+        ma
+        *ngFor="let item of toggleButtons$ | async"
+        [disabled]="+item === disableButton"
+        (click)="onItemClicked(item)"
+      >
+        {{ item }}
+      </button>
+    </mat-menu></mat-card-content
+  ></mat-card
+>
+<mat-card
+  ><mat-card-title></mat-card-title
+  ><mat-card-content
+    ><mat-list role="list"
+      ><mat-list-item role="listitem" *ngFor="let item of products$ | async">{{
+        item.title
+      }}</mat-list-item></mat-list
+    ></mat-card-content
+  ></mat-card
+>

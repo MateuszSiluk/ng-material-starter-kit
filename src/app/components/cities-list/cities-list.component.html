@@ -1,0 +1,45 @@
+<h1>Show Cities</h1>
+<mat-card
+  ><mat-card-title>Select page</mat-card-title
+  ><mat-card-content
+    ><mat-selection-list
+      role="list"
+      fxLayout="row"
+      [multiple]="false"
+      (selectionChange)="onPageNumberClicked($event)"
+      *ngIf="paginatorData$ | async as paginatorData"
+    >
+      <mat-list-option
+        role="listoption"
+        *ngFor="let item of paginatorPageNumber$ | async"
+        [value]="item"
+      >
+        {{ item }}
+      </mat-list-option>
+    </mat-selection-list></mat-card-content
+  ></mat-card
+>
+<mat-card
+  ><mat-card-title>Select items per page</mat-card-title
+  ><mat-card-content
+    ><mat-selection-list
+      role="list"
+      fxLayout="row"
+      [multiple]="false"
+      (selectionChange)="onItemPerPageClicked($event)"
+    >
+      <mat-list-option
+        role="listoption"
+        *ngFor="let item of itemsPerPage$ | async"
+        [value]="item"
+      >
+        {{ item }}
+      </mat-list-option>
+    </mat-selection-list></mat-card-content
+  ></mat-card
+>
+<mat-list role="list"
+  ><mat-list-item role="listitem" *ngFor="let item of slicedCities$ | async">{{
+    item.name
+  }}</mat-list-item></mat-list
+>
